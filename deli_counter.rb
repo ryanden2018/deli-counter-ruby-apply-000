@@ -5,10 +5,13 @@ def line(katz_deli)
     puts "The line is currently empty."
   else
     str = "The line is currently:"
-    counter = 1
-    katz_deli.each do |name|
-      str += " #{counter}. #{name}"
-      counter += 1
+    #counter = 1
+    #katz_deli.each do |name|
+    #  str += " #{counter}. #{name}"
+    #  counter += 1
+    #end 
+    katz_deli.each_with_index(1) do |name,num|
+      str += " #{num}. #{name}"
     end 
     puts str
   end 
