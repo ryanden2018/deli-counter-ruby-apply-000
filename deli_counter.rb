@@ -1,4 +1,5 @@
 # Write your code here.
+$counter = 0 
 
 def line(katz_deli)
   if katz_deli.length == 0 
@@ -17,17 +18,24 @@ def line(katz_deli)
   end 
 end
 
-def take_a_number(katz_deli,name)
-  katz_deli << name 
-  puts "Welcome, #{name}. You are number #{katz_deli.length} in line."
-  katz_deli
-end 
+#def take_a_number(katz_deli,name)
+#  katz_deli << name 
+#  puts "Welcome, #{name}. You are number #{katz_deli.length} in line."
+#  katz_deli
+#end 
 
+def take_a_number(katz_deli)
+  $counter += 1 
+  katz_deli << $counter 
+  puts "Welcome. You are number #{$counter} in line."
+  katz_deli 
+end
+ 
 def now_serving(katz_deli)
   if katz_deli.length == 0 
     puts "There is nobody waiting to be served!"
   else 
-    name = katz_deli.shift
-    puts "Currently serving #{name}."
+    num = katz_deli.shift
+    puts "Currently serving number #{num}."
   end 
 end
